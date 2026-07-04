@@ -1,0 +1,54 @@
+/* Exercise 7 - Table Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #fffdf5;
+    color: #333;
+}
+
+.table-wrapper {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #2c5f2d;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #ffffff;
+}
+
+th, td {
+    border: 1px solid #c9d6b0;
+    padding: 0.75rem;
+    text-align: center;
+}
+
+th {
+    background-color: #7fb069;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f5f9eb;
+}
+
+caption {
+    caption-side: top;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+    color: #4a6b2b;
+}
+
+@media (max-width: 600px) {
+    th, td {
+        padding: 0.5rem;
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,28 @@
+/* Exercise 2 styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eef6ff;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 1rem;
+    background: linear-gradient(135deg, #5b8def, #8dd8ff);
+    color: white;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background-color: #ff6b6b;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: #ff4d4d;
+}

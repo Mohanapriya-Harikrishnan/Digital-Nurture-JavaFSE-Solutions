@@ -1,0 +1,78 @@
+/* Exercise 11 - DevTools Testing Page */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f9ff;
+    color: #333;
+}
+
+.page-header {
+    background-color: #2d6cdf;
+    color: white;
+    text-align: center;
+    padding: 3rem 1rem;
+}
+
+.dev-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #e9f2ff;
+    flex-wrap: wrap;
+}
+
+.dev-nav a {
+    color: #1d3557;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.card {
+    flex: 1 1 250px;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 0.7rem;
+}
+
+.page-footer {
+    background-color: #1d3557;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+/* DevTools can inspect the box model, flex layout, and media rules below. */
+
+@media (max-width: 600px) {
+    .page-header {
+        padding: 2rem 1rem;
+    }
+
+    .dev-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content {
+        padding: 1rem;
+    }
+}

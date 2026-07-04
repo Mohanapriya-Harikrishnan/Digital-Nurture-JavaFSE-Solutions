@@ -1,0 +1,47 @@
+/* Exercise 9 - Multiple Columns in Text */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 2rem;
+    background-color: #f5f8fb;
+    color: #2f3e46;
+}
+
+.news-page {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+h1 {
+    color: #1d3557;
+    margin-bottom: 0.5rem;
+}
+
+.news-article {
+    column-count: 2;
+    column-gap: 30px;
+    column-rule: 1px solid gray;
+    text-align: justify;
+    line-height: 1.7;
+}
+
+h2 {
+    column-span: all;
+    margin-bottom: 1rem;
+    color: #2a6f97;
+}
+
+@media (max-width: 600px) {
+    .news-article {
+        column-count: 1;
+    }
+}
