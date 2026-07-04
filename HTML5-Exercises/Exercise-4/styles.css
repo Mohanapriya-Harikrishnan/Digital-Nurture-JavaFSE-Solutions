@@ -1,0 +1,30 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f7f9fc;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 15px;
+    text-align: center;
+    vertical-align: top;
+}
+
+.event-image {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}

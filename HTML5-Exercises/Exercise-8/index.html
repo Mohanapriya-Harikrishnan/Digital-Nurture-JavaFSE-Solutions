@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 8 - Saving User Preferences</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Save Your Event Preferences</h1>
+        <p>Choose your favorite event type and it will be remembered.</p>
+    </header>
+
+    <main>
+        <label for="eventType">Select Event Type:</label>
+        <select id="eventType">
+            <option value="Festival">Festival</option>
+            <option value="Workshop">Workshop</option>
+            <option value="Market">Market</option>
+        </select>
+
+        <button id="saveBtn">Save Preference</button>
+        <button id="clearBtn">Clear Preferences</button>
+
+        <p id="status">No preference saved yet.</p>
+    </main>
+
+    <script>
+        const eventTypeSelect = document.getElementById('eventType');
+        const status = document.getElementById('status');
+
+        // Load saved preference when the page opens.
+        function loadPreference() {
+            const saved = localStorage.getItem('preferredEvent');
+            if (saved) {
+                eventTypeSelect.value = saved;
+                status.textContent = `Restored preference: ${saved}`;
+            }
+        }
+
+        // Save the selected value to localStorage.
+        document.getElementById('saveBtn').addEventListener('click', function () {
+            const selected = eventTypeSelect.value;
+            localStorage.setItem('preferredEvent', selected);
+            sessionStorage.setItem('lastSelectedEvent', selected);
+            status.textContent = `Saved preference: ${selected}`;
+        });
+
+        // Clear all saved browser storage.
+        document.getElementById('clearBtn').addEventListener('click', function () {
+            localStorage.removeItem('preferredEvent');
+            sessionStorage.removeItem('lastSelectedEvent');
+            status.textContent = 'Preferences cleared.';
+        });
+
+        loadPreference();
+    </script>
+</body>
+</html>

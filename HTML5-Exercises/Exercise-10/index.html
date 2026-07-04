@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 10 - Chrome DevTools Debugging</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>DevTools Practice Page</h1>
+        <p>Use Chrome DevTools to inspect HTML, CSS, and JavaScript.</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>Sample Content</h2>
+            <p>This page is designed for testing breakpoints and console messages.</p>
+        </section>
+
+        <section class="card">
+            <h2>Debugging Example</h2>
+            <button id="debugBtn">Run Demo</button>
+            <p id="demoOutput">No action taken yet.</p>
+        </section>
+    </main>
+
+    <script>
+        // This console message helps you inspect the script in the Console panel.
+        console.log('Page loaded successfully.');
+
+        function calculateTotal(items, taxRate) {
+            // This function is useful for testing breakpoints in the Sources panel.
+            let total = 0;
+            for (let i = 0; i < items.length; i++) {
+                total += items[i];
+            }
+            return total + (total * taxRate);
+        }
+
+        document.getElementById('debugBtn').addEventListener('click', function () {
+            const items = [10, 20, 30];
+            const taxRate = 0.1;
+            const result = calculateTotal(items, taxRate);
+            console.log('Calculated total:', result);
+            document.getElementById('demoOutput').textContent = `Total with tax: $${result.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>

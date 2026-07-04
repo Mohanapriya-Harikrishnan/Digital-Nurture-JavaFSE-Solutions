@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9 - Geolocation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Find Nearby Events</h1>
+        <p>Use your browser location to discover events close to you.</p>
+    </header>
+
+    <main>
+        <button id="locateBtn">Find Nearby Events</button>
+        <div id="result">
+            <p>Location will appear here.</p>
+        </div>
+    </main>
+
+    <script>
+        const locateBtn = document.getElementById('locateBtn');
+        const result = document.getElementById('result');
+
+        // Ask the browser for the user's location.
+        locateBtn.addEventListener('click', function () {
+            if (!navigator.geolocation) {
+                result.innerHTML = '<p>Geolocation is not supported by this browser.</p>';
+                return;
+            }
+
+            navigator.geolocation.getCurrentPosition(
+                function (position) {
+                    const latitude = position.coords.latitude;
+                    const longitude = position.coords.longitude;
+                    result.innerHTML = `
+                        <p><strong>Latitude:</strong> ${latitude}</p>
+                        <p><strong>Longitude:</strong> ${longitude}</p>
+                    `;
+                },
+                function (error) {
+                    switch (error.code) {
+                        case error.PERMISSION_DENIED:
+                            result.innerHTML = '<p>Location permission was denied.</p>';
+                            break;
+                        case error.TIMEOUT:
+                            result.innerHTML = '<p>Location request timed out.</p>';
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                            result.innerHTML = '<p>Location information is unavailable.</p>';
+                            break;
+                        default:
+                            result.innerHTML = '<p>Unknown geolocation error occurred.</p>';
+                    }
+                },
+                {
+                    enableHighAccuracy: true,
+                    timeout: 10000,
+                    maximumAge: 0
+                }
+            );
+        });
+    </script>
+</body>
+</html>
