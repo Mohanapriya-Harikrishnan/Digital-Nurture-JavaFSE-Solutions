@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Exercise 9.2</title>
+    <link rel="stylesheet" href="../Exercise-1.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Button groups section -->
+    <div class="container py-5">
+        <h2 class="mb-4">Bootstrap Button Groups</h2>
+
+        <div class="mb-4">
+            <h5>Horizontal button group</h5>
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-primary">Left</button>
+                <button type="button" class="btn btn-primary">Middle</button>
+                <button type="button" class="btn btn-primary">Right</button>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h5>Vertical button group</h5>
+            <div class="btn-group-vertical" role="group">
+                <button type="button" class="btn btn-success">One</button>
+                <button type="button" class="btn btn-success">Two</button>
+                <button type="button" class="btn btn-success">Three</button>
+            </div>
+        </div>
+
+        <div>
+            <h5>Toggle buttons</h5>
+            <div class="btn-group" role="group" aria-label="Toggle buttons">
+                <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btncheck1">Checkbox 1</label>
+
+                <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                <label class="btn btn-outline-primary" for="btncheck2">Checkbox 2</label>
+            </div>
+
+            <div class="btn-group mt-3" role="group" aria-label="Radio toggle button group">
+                <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off" checked>
+                <label class="btn btn-outline-secondary" for="option1">Option 1</label>
+
+                <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+                <label class="btn btn-outline-secondary" for="option2">Option 2</label>
+            </div>
+        </div>
+    </div>
+
+    <script src="../Exercise-1.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
